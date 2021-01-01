@@ -1,0 +1,25 @@
+button {
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+}
+
+#buttons, #headers {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h1 {
+    display: inline-block;
+    margin: 5px;
+}
+
+h1:hover {
+    text-decoration: underline;
+    text-decoration-color: teal;
+    cursor: pointer;
+}
+
+button:hover {
+    cursor: pointer;
+}
