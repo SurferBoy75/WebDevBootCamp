@@ -1,0 +1,39 @@
+<% layout('layouts/boilerplate') %>
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+            <div class="card">
+                <img src="https://res.cloudinary.com/dq1c9f7fj/image/upload/v1614970019/campgrounds/IMG_1177_zxcykk.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Add a New Member</h5>
+                    <form class="validated-form" action="/register" method="POST" novalidate>
+                        <div class="mb-3">
+                            <label class="form-label" for="username">Username: </label>
+                            <input class="form-control" id="username" type="text" name="username" placeholder="Enter a user name" required>
+                            <div class="valid-feedback">
+                                Bitchin!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="email">Email: </label>
+                            <input class="form-control" id="email" type="email" name="email" placeholder="member.email@domain.com" required>
+                            <div class="valid-feedback">
+                                Bitchin!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="password">Password: </label>
+                            <input class="form-control" id="password" type="password" name="password" placeholder="Enter a password" required>
+                            <div class="valid-feedback">
+                                Bitchin!
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-success">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

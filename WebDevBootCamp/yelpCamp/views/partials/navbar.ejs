@@ -1,0 +1,29 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark p-0">
+    <div class="container-fluid ps-0">
+        <a class="navbar-brand p-0 m-0" href="#">
+           <img src="https://res.cloudinary.com/dq1c9f7fj/image/upload/v1614867119/campgrounds/fireside_oqay63.jpg" 
+              alt="" width="40px">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" href="/">Home</a>
+                <a class="nav-link" href="/campgrounds">Campgrounds</a>
+                <a class="nav-link" href="/campgrounds/new">New</a>
+            </div>
+            <div class="navbar-nav  ms-auto">
+                <% if (!currentUser) {%>
+                    <a class="nav-link" href="/login">Login</a>
+                <% } else { %> 
+                    <a class="nav-link" href="/register">Add a member</a>
+                    <a class="nav-link" href="/login">Change User</a>
+                    <a class="nav-link" href="/logout">Logout</a>
+                    <span class="nav-static">-> <%= currentUser.username %> </span>
+                <% } %> 
+            </div>
+        </div>
+    </div>
+</nav>

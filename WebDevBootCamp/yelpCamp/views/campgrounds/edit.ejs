@@ -1,0 +1,64 @@
+<% layout('layouts/boilerplate') %>
+<div class="row text-white">
+    <h1 class="text-center">Update Campground Details</h1>
+    <div class="col-6 offset-3">
+        <form action="/campgrounds/<%= camp._id %>?_method=PUT" method="POST" novalidate class="validated-form" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label class="form-label" for="title">Campground Title: </label>
+                <input class="form-control" id="title" type="text" name="campground[title]" value="<%= camp.title %>" required>
+                <div class="valid-feedback">
+                    Fuckin' A, dude!
+                </div>
+                <div class="form-check-inline">
+                    <% if (!camp.campedHere) { %> 
+                        <input id="campedHere" type="checkbox" name="campground[campedHere]" value="true">
+                        <label for="campedHere">Camped here... </label>
+                    <% } else { %> 
+                        <input id="campedHere" type="checkbox" name="campground[campedHere]" value="false">
+                        <label for="campedHere">Haven't camped here yet... </label>
+                    <% } %> 
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="title">Campground Location: </label>
+                <input class="form-control" id="title" type="text" name="campground[location]" value="<%= camp.location %>">
+            </div>
+            <div>
+                <label class="form-label" for="price">Price</label>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input id="price" name="campground[price]" type="number" class="form-control" min="10" max="110" value="<%= camp.price %>" aria-label="Amount (to the nearest dollar)" required>
+                <span class="input-group-text">.00</span>
+                <div class="valid-feedback">
+                    Fuckin' A, dude!
+                </div>
+              </div>
+            <div class="mb-3">
+                <label class="form-label" for="description">Campground Description: </label>
+                <textarea class="form-control" id="description" name="campground[description]" 
+                          rows="3" cols="50" required><%= camp.description %></textarea>
+                <div class="valid-feedback">
+                    Fuckin' A, dude!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Campground Photos:</label>
+                <input id="image" type="file" name="image" class="form-control" multiple>
+            </div>
+            <div class="mb-3">
+                <% camp.images.forEach(function(img, i) { %>
+                    <label for="select-<%=i%>">Delete</label>
+                    <div class="form-check-inline">
+                        <input id="select-<%=i%>" type="checkbox" name="deleteImages[]" value="<%=img.filename%>">
+                    </div>
+                    <img src="<%= img.thumbnail%> " class="img-thumbnail" alt="">
+                <% }) %>  
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-info">Update</button>
+                <a class="btn btn-danger" type="button" href="/campgrounds/<%= camp._id %> ">cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+            <div class="card">
+                <img src="https://res.cloudinary.com/dq1c9f7fj/image/upload/v1614973876/campgrounds/IMG_0002_xjjqmi.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Login</h5>
+                    <form class="validated-form mb-5" action="/login" method="POST" novalidate>
+                        <div class="mb-3">
+                            <label class="form-label" for="username">Username: </label>
+                            <input class="form-control" id="username" type="text" name="username" placeholder="Enter a user name" autofocus required>
+                            <div class="valid-feedback">
+                                Bitchin!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="password">Password: </label>
+                            <input class="form-control" id="password" type="password" name="password" placeholder="Enter a password" required>
+                            <div class="valid-feedback">
+                                Bitchin!
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-success">Log In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
