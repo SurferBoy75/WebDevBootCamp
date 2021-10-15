@@ -165,4 +165,5 @@ app.use((err, req, res, next) => {
 
 //shhhhhhh..... I'm ALWAYS listening!
 
-app.listen(3000, () => { console.info("yelpCamp now serving on port 3000") });
+const port = process.env.PORT || 3000;
+app.listen(port, () => { console.info(`Fireside Review now serving on port ${port}`) });
