@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Comments</title>
+
+    <style>
+        form {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comment id:
+        <%= comment.id %> </h1>
+        <div>
+            <i><%= comment.comment %></i> - <b><%= comment.username %></b>
+        </div>
+
+        <div>
+            <form method="GET" action="/comments/<%= comment.id %>/Edit">
+                <button>Edit</button>
+            </form>
+            <form method="POST" action="/comments/<%= comment.id %>?_method=DELETE">
+                <button>Delete</button>
+            </form>
+        </div>
+
+        <div>
+            <a href="/comments">home</a>
+        </div>
+
+</body>
+</html>

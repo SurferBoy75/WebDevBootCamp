@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comments index</title>
+</head>
+
+<body>
+    <h1>comments</h1>
+
+    <ul>
+        <% for (let c of comments) { %>
+            <li>
+                <i><%= c.comment %></i> - <b><%= c.username %></b> <sup><a href="/comments/<%= c.id %>">browse</a></sup>
+            <% } %>
+
+    </ul>
+
+    <a href="/comments/new">New Comment</a>
+
+</body>
+
+</html>

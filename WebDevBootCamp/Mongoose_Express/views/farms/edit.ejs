@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update:
+        <%= farm.name %> </title>
+</head>
+<body> 
+
+    <form action="/farms/<%= farm._id %>?_method=PUT" method="POST">
+        <div>
+            <label for="name">Farm Name: </label>
+            <input id="name" type="text" name="name" value="<%= farm.name %>" required>
+        </div>
+        <div>
+            <label for="city">Farm City: </label>
+            <input id="city" type="text" name="city" value="<%= farm.city %>">
+        </div>
+        <div>
+            <label for="email">Farm Email: </label>
+            <input id="email" type="email" name="email" value="<%= farm.email %>" required>
+        </div>
+        <div>
+            <button>Update</button>
+        </div>
+    </form>
+
+    <a href="/farms/<%= farm._id %>">cancel</a>
+</body>
+</html>

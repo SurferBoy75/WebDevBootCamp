@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= farm.name %> </title>
+</head>
+<body>
+    <h1><%= farm.name %> details... </h1>
+
+    <ul>
+        <li>Location: <%= farm.city %>, CA</li>
+        <li>email: <%= farm.email%> </li>
+    </ul>
+    <h3>Farm Products</h3>
+    <ul>
+        <% for (let product of farm.products) {%>
+            <li><a href="/products/<%= product._id %> "><%= product.name %> </a></li>
+        <% } %>  
+    </ul>
+
+    <form action="/farms/<%= farm._id %>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
+
+    <a href="/farms/<%= farm._id %>/edit">edit</a>
+    <a href="/farms/<%= farm._id %>/products/new">add product</a>
+    <a href="/farms">Farms</a>
+    
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bcrypt_demo</title>
+    <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+    <h1>Fun with User Authentication</h1>
+
+    <form action="/register" method="GET">
+        <button>Register</button>
+    </form>
+
+    <form action="/login" method="GET">
+        <button>Log In</button>
+    </form>
+
+    <form action="/logout" method="POST">
+        <button>Log Out</button>
+    </form>
+
+
+    <% if(isAuthenticated) { %>
+        <div>
+            <br>
+            <br>
+            <a href="/secret">Secret</a>
+        </div>
+    <% } %> 
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
